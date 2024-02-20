@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Table = ({ data,setData }) => {
+const Table = ({ data, setData,handleEdit }) => {
 
     const handleDlt = (index) => {
         const arr = [...data]
@@ -22,11 +22,11 @@ const Table = ({ data,setData }) => {
                 <tbody>
                     {data.map((item, index) => (
                         <tr key={index + 1}>
-                            <td>{index}</td>
+                            <td>{index+1}</td>
                             <td>{item.username}</td>
                             <td>{item.phone}</td>
                             <td className='btn-group'>
-                                <button className='edit'>edit</button>
+                                <button className='edit' onClick={() => handleEdit(index)}>edit</button>
                                 <button className='delete' onClick={() => handleDlt(index)}>delete</button>
                             </td>
                         </tr>
