@@ -1,6 +1,13 @@
 import React from 'react'
 
-const Table = ({ data }) => {
+const Table = ({ data,setData }) => {
+
+    const handleDlt = (index) => {
+        const arr = [...data]
+        arr.splice(index, 1)
+        setData(arr)
+    }
+
     return (
         <div>
             <table>
@@ -9,6 +16,7 @@ const Table = ({ data }) => {
                         <th>sno</th>
                         <th>username</th>
                         <th>phone</th>
+                        <th>option</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -17,6 +25,10 @@ const Table = ({ data }) => {
                             <td>{index}</td>
                             <td>{item.username}</td>
                             <td>{item.phone}</td>
+                            <td className='btn-group'>
+                                <button className='edit'>edit</button>
+                                <button className='delete' onClick={() => handleDlt(index)}>delete</button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

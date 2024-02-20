@@ -24,7 +24,7 @@ const Form = () => {
         <input type="number" title='number' placeholder='Enter mobile number' value={phone} onChange={(e) => setPhone(e.target.value)} />
         <button>Add</button>
       </form>
-      <Table data={data} />
+      <Table data={data} setData={setData}/>
     </div>
   )
 }

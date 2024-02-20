@@ -36,7 +36,8 @@ table {
     width: 100%;
 }
 
-th, td {
+th,
+td {
     border: 1px solid black;
     padding: 10px;
     text-align: left;
@@ -44,7 +45,23 @@ th, td {
 }
 
 th {
+    text-transform: uppercase;
     background-color: #f2f2f2;
 }
 
+.btn-group {
+    display: flex;
+    justify-content: space-around;
+}
 
+.delete {
+    width: 30%;
+    background-color: red;
+    text-transform: uppercase;
+}
+
+.edit {
+    width: 30%;
+    text-transform: uppercase;
+    background-color: rgb(48, 47, 47);
+}
